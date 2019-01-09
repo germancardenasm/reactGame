@@ -1,36 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid; */
+}
+
 .App {
   text-align: center;
+ 
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+/* .container{
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ */
+#header{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0px;
+  padding: 10px 10px 0px 10px;
 }
 
-.App-link {
-  color: #61dafb;
+h1, #timer, #timer-count, #timer-display{
+  height: 60px;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1{
+
+  font-size: 55px;
+  font-family: 'Staatliches', cursive;
+  flex-grow: 1;
 }
 
+#timer-display{
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  border: 2px solid;
+  border-radius: 15px;
+  width: 250px;
+  padding: 0px 15px;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 60px;
+}
+
+#timer{
+  width: 60%;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+#timer-count{
+  width: 40%;
+  text-align: right;
+  color: rgb(2, 170, 2);
+}
+
+#line{
+  position: relative;
+  top:-25px;
+  height: 1px;
+  border: 1px solid rgb(209, 209, 209);
+  margin-bottom: 50px;
+}
+ #game-content{
+   width: 90%;
+   margin: auto;
+ }
 .fa-star{
   margin: 0.5em;
   font-size: 24px;
@@ -67,4 +106,18 @@
 
 .btn-sm{
   font-size: 13px;
+}
+
+#startGame{
+   text-align: center;
+ }
+
+
+ @media only screen and (max-width: 600px) {
+
+  #header {
+      flex-direction: column;
+      align-items: center;
+  }
+
 }
