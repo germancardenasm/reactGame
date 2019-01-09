@@ -34,6 +34,7 @@ class App extends Component {
 class Game extends Component {
 
     static createRandomNumerOfStars = () => 1 + Math.floor(Math.random() * 9);
+
     static initialState = () => (
         {
             selectedNumbers: [],
@@ -166,7 +167,8 @@ class Game extends Component {
                             usedNumbers={usedNumbers}
                             acceptAnswer={this.acceptAnswer}
                             redraw={this.redraw}
-                            lives={lives} />
+                            lives={lives} 
+                            buttonStartState ={buttonStartState}/>
                         <Result selectedNumbers={selectedNumbers}
                             eraseAnswer={this.eraseAnswer} />
                     </div>
@@ -238,7 +240,7 @@ const Equal = (props) => {
 
         } else {
             return button = <button className='btn btn-primary btn-lg' onClick={() => props.checkAnswer()}
-                disabled={props.selectedNumbers.length === 0}> = </button>
+                disabled={props.selectedNumbers.length === 0 || props.buttonStartState==="btn btn-info btn-lg visible"}> = </button>
         }
     }
     return (
@@ -246,7 +248,7 @@ const Equal = (props) => {
             {showResultOfAnsware()}
             <br />
             <br />
-            <button className='btn btn-warning btn-sm' onClick={() => props.redraw()} disabled={props.lives === 0}>
+            <button className='btn btn-warning btn-sm' onClick={() => props.redraw()} disabled={props.lives ===0} > 
                 <i className='fas fa-sync-alt'> {props.lives}  </i>
             </button>
 
@@ -303,7 +305,7 @@ const StatusOfGame = (props) => {
                 <button className='btn btn-secondary' onClick={() => props.resetGame()}>
                     Play again!</button>
             </div>
-        </div>)
+        </div>)   
 }
 
 export default App;
