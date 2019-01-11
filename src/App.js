@@ -159,7 +159,7 @@ class Game extends Component {
                 <div id="line"><br /></div>
 
                 <div id="game-content">
-                    <div className="row">
+                    <div className="game-controls">
                         <Stars numberOfStars={numberOfStars} />
                         <Equal selectedNumbers={selectedNumbers}
                             answereIsCorrect={answereIsCorrect}
@@ -192,7 +192,7 @@ class Game extends Component {
 const Start = (props) => {
     return (
         <div>
-            <button id='startButton' className={props.buttonStartState} onClick={() => props.startTimer()} disabled={props.timer.getSeconds() < 3}>
+            <button id='startButton' className={props.buttonStartState} onClick={() => props.startTimer()}>
                 <i> Start Game!</i>
             </button>
         </div>
@@ -219,7 +219,7 @@ const Stars = (props) => {
         stars.push(<i key={i} className="fa fa-star"></i>)
     }
     return (
-        <div className="col-md-5">
+        <div className="cellDisplay">
             {stars}
         </div>
     )
@@ -230,26 +230,28 @@ const Equal = (props) => {
     const showResultOfAnsware = () => {
 
         if (props.answereIsCorrect) {
-            return button = <button className='btn btn-success ' onClick={() => props.acceptAnswer()}>
+            return button = <button className='btn btn-success btn-lg' onClick={() => props.acceptAnswer()}>
                 <i className='fa fa-check'>  </i> </button>
 
         } else if (props.answereIsCorrect === false) {
-            return button = <button className='btn btn-danger'>
+            return button = <button className='btn btn-danger btn-lg'>
                 <i className='fas fa-times'>  </i>
             </button>
 
         } else {
             return button = <button className='btn btn-primary btn-lg' onClick={() => props.checkAnswer()}
-                disabled={props.selectedNumbers.length === 0 || props.buttonStartState==="btn btn-info btn-lg visible"}> = </button>
+                disabled={props.selectedNumbers.length === 0 || props.buttonStartState!="invisible"}> = </button>
         }
     }
     return (
-        <div className='col-md-2 text-center'>
+        <div className='controlButtons text-center'>
             {showResultOfAnsware()}
             <br />
             <br />
-            <button className='btn btn-warning btn-sm' onClick={() => props.redraw()} disabled={props.lives ===0} > 
-                <i className='fas fa-sync-alt'> {props.lives}  </i>
+            <button className='btn btn-warning btn-lg' onClick={() => props.redraw()} 
+            disabled={props.lives ===0 || props.buttonStartState!="invisible"} > 
+                <i className='fas fa-sync-alt'>  </i>
+                {props.lives} 
             </button>
 
         </div>
@@ -259,7 +261,7 @@ const Equal = (props) => {
 const Result = (props) => {
 
     return (
-        <div className="col-md-5">
+        <div className="cellDisplay">
             {props.selectedNumbers.map((num, i) =>
                 <span key={i} className='circle-span'
                     onClick={() => props.eraseAnswer(num)} >{num}</span>)}
