@@ -11,12 +11,12 @@
   margin: 1em;
 }
 
-button{
-  margin: 5px;
-}
 .App {
   text-align: center;
- 
+}
+
+button{
+  margin: 5px;
 }
 
 .container{
@@ -46,8 +46,8 @@ h1{
   display: flex;
   flex-direction: row;
   font-size: 30px;
-  border: 2px solid;
-  border-radius: 15px;
+  border: 2px solid gray;
+  border-radius: 0.2em;
   width: 250px;
   padding: 0px 15px;
   font-family: 'Montserrat', sans-serif;
@@ -103,6 +103,10 @@ h1{
   font-size: 24px;
 } 
 
+#numbersDiv{
+  border: 1px solid gray
+}
+
 .circle-span{
   display: inline-block;
   margin: 0.5em;
@@ -144,7 +148,7 @@ h1{
  @media only screen and (max-width: 900px) {
 
   body{
-    min-width: 460px;
+    min-width: 470px;
   }
   #header {
       flex-direction: column;

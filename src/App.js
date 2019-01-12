@@ -24,7 +24,7 @@ var interV;
 class App extends Component {
     render() {
         return (
-            <div id="game">
+            <div id='game'>
                 <Game />
             </div>
         )
@@ -284,7 +284,7 @@ const Numbers = (props) => {
     }
     return (
         <div className='card text-center numbers'>
-            <div>
+            <div id='numbersDiv'>
                 {
                     numbers.map((num, i) =>
                         <span key={i} className={checkSelectedNumbers(num)}
