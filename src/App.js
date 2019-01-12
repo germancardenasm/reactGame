@@ -24,7 +24,7 @@ var interV;
 class App extends Component {
     render() {
         return (
-            <div>
+            <div id="game">
                 <Game />
             </div>
         )
@@ -240,7 +240,7 @@ const Equal = (props) => {
 
         } else {
             return button = <button className='btn btn-primary btn-lg' onClick={() => props.checkAnswer()}
-                disabled={props.selectedNumbers.length === 0 || props.buttonStartState!="invisible"}> = </button>
+                disabled={props.selectedNumbers.length === 0 || props.buttonStartState!=="invisible"}> = </button>
         }
     }
     return (
@@ -249,7 +249,7 @@ const Equal = (props) => {
             <br />
             <br />
             <button className='btn btn-warning btn-lg' onClick={() => props.redraw()} 
-            disabled={props.lives ===0 || props.buttonStartState!="invisible"} > 
+            disabled={props.lives ===0 || props.buttonStartState!=="invisible"} > 
                 <i className='fas fa-sync-alt'>  </i>
                 {props.lives} 
             </button>

@@ -5,6 +5,12 @@
   /* border: 1px solid; */
 }
 
+#game{
+  border: 2px solid;
+  border-radius: 1em;
+  margin: 1em;
+}
+
 button{
   margin: 5px;
 }
@@ -137,6 +143,9 @@ h1{
 
  @media only screen and (max-width: 900px) {
 
+  body{
+    min-width: 460px;
+  }
   #header {
       flex-direction: column;
       align-items: center;
@@ -147,7 +156,7 @@ h1{
  }
 
  .cellDisplay{
-   height: 6.5em;
+   min-height: 5em;
    flex-wrap: wrap;
    margin: 1em;
 }
